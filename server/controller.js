@@ -30,7 +30,10 @@ module.exports = {
     approveAppointment: (req, res) => {
         let {apptId} = req.body
     
-        sequelize.query(`*****YOUR CODE HERE*****
+        sequelize.query(`
+        update cc_appointments 
+        set approved = true
+        where appt_id = '${apptId}';
         
         insert into cc_emp_appts (emp_id, appt_id)
         values (${nextEmp}, ${apptId}),
