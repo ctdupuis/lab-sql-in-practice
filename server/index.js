@@ -20,8 +20,8 @@ app.use(cors())
 app.get('/clients', getAllClients)
 
 // APPOINTMENTS
-// app.get('/pending', getPendingAppointments)
-// app.get('/upcoming', getUpcomingAppointments)
+app.get('/pending', getPendingAppointments)
+app.get('/upcoming', getUpcomingAppointments)
 // app.get('/appt', getPastAppointments)
 // app.put('/approve', approveAppointment)
 // app.put('/complete', completeAppointment)

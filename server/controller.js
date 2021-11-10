@@ -51,6 +51,17 @@ module.exports = {
             `
         )
         .then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
+    },
+    getPendingAppointments: (req, res) => {
+        sequelize.query(
+            `
+                select * from cc_appointments
+                where approved = false
+                order by date desc;
+            `
+        )
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err));
     }
 }
